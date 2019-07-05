@@ -1,0 +1,64 @@
+<app-app-header></app-app-header>
+<!--
+
+<form (ngSubmit) = "onSubmit($event)">
+  <div class="form-group">
+    <label for="patient_id">PatientId</label>
+    <input type="text" class="form-control" id="patient_id" name="patient_id" placeholder="Enter Patient ID" >
+  </div>
+
+  <button  type="submit" class="btn btn-primary"> LogIn </button>
+</form> -->
+<!-- (click)="onLoginClick()" -->
+<!--===============================================================================================-->
+
+<div class="bg">
+  <div class="wrapper">
+  <div class="main" >
+    <p class="sign">Patient Sign in</p>
+
+      <form class="form1" (ngSubmit) = "onSubmit($event)">
+
+
+        <div>
+          <input class="un" id="patient_id" type="number" name="patient_id" align="center" placeholder="Patient ID" required/>
+
+        </div>
+        <div>
+          <input class="pass"  type="password" name="pass" align="center" placeholder="Password">
+
+        </div>
+
+
+        <div class="server">
+          <button type="submit" class="submit">
+            Sign in
+          </button>
+        </div>
+
+        <mat-form-field>
+            <mat-label>Select a FHIR server</mat-label>
+            <mat-select (selectionChange)="getValue($event.value)">
+              <mat-option value="option1">HAPI</mat-option>
+              <mat-option value="option2">EPIC</mat-option>
+              <mat-option value="option3">CERNER</mat-option>
+              <mat-option value="option4">AllScripts</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+
+      </form>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+

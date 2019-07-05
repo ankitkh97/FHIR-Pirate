@@ -1,0 +1,23 @@
+<app-app-header [isUserLoggedIn]="true"></app-app-header>
+
+
+<mat-card class="example-card">
+    <mat-card-header>Nutrition Order</mat-card-header>
+    <br><br>
+    <mat-card-content>
+        <mat-list-item role="listitem"><b>Orderer: </b>{{nutrition.orderer.reference}}</mat-list-item>
+        <br>
+        <mat-list-item role="listitem"><b>Oral Diet: </b>{{nutrition.oralDiet.type[0].text}} and {{nutrition.oralDiet.type[1].text}}</mat-list-item>
+        <br>
+        <mat-list-item role="listitem"><b>Schedule: </b>Frequency-{{nutrition.oralDiet.schedule[0].repeat.frequency}}  Period-{{nutrition.oralDiet.schedule[0].repeat.period}}  </mat-list-item>
+        <br>
+        <mat-list-item role="listitem"><b>Nutrient: </b>
+          <mat-list-item role="listitem">{{nutrition.oralDiet.nutrient[0].modifier.text}}- {{nutrition.oralDiet.nutrient[0].amount.value}} {{nutrition.oralDiet.nutrient[0].amount.unit}}</mat-list-item>
+          <mat-list-item role="listitem">{{nutrition.oralDiet.nutrient[1].modifier.text}}- {{nutrition.oralDiet.nutrient[1].amount.value}} {{nutrition.oralDiet.nutrient[1].amount.unit}}</mat-list-item>
+          <mat-list-item role="listitem">{{nutrition.oralDiet.nutrient[2].modifier.text}}- {{nutrition.oralDiet.nutrient[2].amount.value}} {{nutrition.oralDiet.nutrient[2].amount.unit}}</mat-list-item>
+          <mat-list-item role="listitem">{{nutrition.oralDiet.nutrient[3].modifier.text}}- {{nutrition.oralDiet.nutrient[3].amount.value}} {{nutrition.oralDiet.nutrient[3].amount.unit}}</mat-list-item>
+        </mat-list-item>
+
+    </mat-card-content>
+
+</mat-card>

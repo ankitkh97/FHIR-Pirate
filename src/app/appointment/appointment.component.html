@@ -1,0 +1,65 @@
+<app-app-header [isUserLoggedIn]="true"></app-app-header>
+
+
+<div class="w3-banner-main">
+<div class="center-container">
+<div class="content-top">
+    <h3 class="header-w3ls">Appointment Form</h3>
+<div class="content-w3ls">
+<div class="form-w3ls">
+  <form>
+      <div class="content-wthree1">
+        <div>
+              <div class="form-control1">
+                <label class="header">Name <span>*</span></label>
+                <input type="text" id="name" name="name" placeholder="Name" title="Please enter your name" required="">
+              </div>
+
+              <div class="form-control1">
+                  <label class="header">Phone Number <span>*</span></label>
+                  <input type="text" id="name" name="name" placeholder="Phone" title="Please enter your phone number" required="">
+              </div>
+
+              <mat-form-field class="temp">
+                  <input matInput [matDatepicker]="picker" placeholder="Choose a date" style="color: white">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+              <div class="gaps">
+                  <label class="header">Time <span>*</span></label>
+                  <input type="text" id="timepicker" name="Time" class="timepicker form-control1" value="">
+              </div>
+
+              <div class="form-control1">
+                  <label class="header">Department <span>*</span></label>
+                  <select class="form-control1">
+                    <option></option>
+                    <option>Cardiology</option>
+                    <option>Ophthalmology</option>
+                    <option>Neurology</option>
+                    <option>Psychology</option>
+                    <option>Dermatology</option>
+                  </select>
+              </div>
+        </div>
+      </div>
+  </form>
+</div>
+
+  <div>
+      <div class="form-control1 w3-visit">
+          <label class="header">Reason for visit <span>*</span></label>
+            <textarea  name="name" placeholder="" title="Please enter your Full Name" required=""></textarea>
+          </div>
+
+      <div class="form-control1 Insurance">
+              <label class="header">Insurance<span>*</span></label>
+                  <textarea  name="name" placeholder="Do you have any medical Insurances?" title="" required=""></textarea>
+      </div>
+              <input type="submit" value="Make an appointment">
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>

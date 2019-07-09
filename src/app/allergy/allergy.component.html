@@ -4,8 +4,8 @@
 <p> Reaction {{allergy.reaction[0].manifestation[0].coding[0].dsiplay}}</p>
 <p>{{allergy.reaction[0].manifestation[1].coding[0].display}}</p>
 <p>{{allergy.reaction[0].manifestation[2].coding[0].display}}</p> -->
-
-
+<div class="layout">
+<div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
 <mat-card class="example-card">
     <mat-card-header>Allergy</mat-card-header>
     <br><br>
@@ -19,3 +19,9 @@
     </mat-card-content>
 
 </mat-card>
+
+<div>
+    <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+</div>
+</div>
+</div>

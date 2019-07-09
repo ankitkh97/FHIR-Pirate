@@ -9,7 +9,7 @@
       </div>
     </div>
 
-      <div class="card 2" [routerLink]="['/AppointmentInfo']" routerLinkActive="router-link-active" >
+      <div class="card 2" [routerLink]="['/AppointmentInfo']" routerLinkActive="router-link-active" *ngIf="!statusCheck">
       <div class="card_image">
         <img src="../../assets/images/appointment-512.png" />
         </div>

@@ -1,3 +1,4 @@
+import { TempComponent } from './temp/temp.component';
 import { HomeComponent } from './home/home.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { ConditionsComponent } from './conditions/conditions.component';
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'Conditions', component: ConditionsComponent},
   // {path: 'dashboard', component: AppHeaderComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'medication', component: MedicationComponent}
+  {path: 'medication', component: MedicationComponent},
+  {path:'temp', component: TempComponent}
 ];
 
 @NgModule({
@@ -35,4 +37,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 // tslint:disable-next-line: max-line-length
-export const routingComponents = [ PatientDetailComponent, AppointmentComponent, PatientDataComponent, ClinicalComponent, ImmunizationComponent, AllergyComponent, NutritionComponent, MedicationComponent, ConditionsComponent, AppHeaderComponent, HomeComponent ];
+export const routingComponents = [ PatientDetailComponent, AppointmentComponent, PatientDataComponent, ClinicalComponent, ImmunizationComponent, AllergyComponent, NutritionComponent, MedicationComponent, ConditionsComponent, AppHeaderComponent, HomeComponent, TempComponent ];

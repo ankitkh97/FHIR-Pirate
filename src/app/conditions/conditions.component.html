@@ -1,20 +1,37 @@
 <app-app-header [isUserLoggedIn]="true"></app-app-header>
+<div class="layout">
+<div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+    <mat-card class="example-card">
+        <mat-card-header>Conditions</mat-card-header>
+        <br><br>
+        <mat-card-content>
+            <mat-list-item role="listitem"><b>Clinical Status: </b>{{conditions.clinicalStatus}}</mat-list-item>
+            <br>
+            <mat-list-item role="listitem"><b>Verification Status: </b>{{conditions.verificationStatus}}</mat-list-item>
+            <br>
+            <mat-list-item role="listitem"><b>Severity: </b>{{conditions.severity.text}}</mat-list-item>
+            <br>
+            <mat-list-item role="listitem"><b>Onset Age: </b>{{conditions.onsetAge.value}}</mat-list-item>
+            <br>
+            <mat-list-item role="listitem"><b>Evidence: </b>{{conditions.evidence[0].code[0].text}}</mat-list-item>
 
-<mat-card class="example-card">
-    <mat-card-header>Conditions</mat-card-header>
-    <br><br>
-    <mat-card-content>
-        <mat-list-item role="listitem"><b>Clinical Status: </b>{{conditions.clinicalStatus}}</mat-list-item>
-        <br>
-        <mat-list-item role="listitem"><b>Verification Status: </b>{{conditions.verificationStatus}}</mat-list-item>
-        <br>
-        <mat-list-item role="listitem"><b>Severity: </b>{{conditions.severity.text}}</mat-list-item>
-        <br>
-        <mat-list-item role="listitem"><b>Onset Age: </b>{{conditions.onsetAge.value}}</mat-list-item>
-        <br>
-        <mat-list-item role="listitem"><b>Evidence: </b>{{conditions.evidence[0].code[0].text}}</mat-list-item>
+
+        </mat-card-content>
+
+    </mat-card>
 
 
-    </mat-card-content>
+<div>
+    <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a></div>
+</div>
+</div>
 
-</mat-card>
+
+
+
+<!-- <script>
+  $(function () {
+  $('popover').popover()
+});
+</script> -->
+

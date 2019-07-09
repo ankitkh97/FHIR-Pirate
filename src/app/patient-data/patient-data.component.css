@@ -100,4 +100,11 @@ font-family: 'Ubuntu', sans-serif;
 
  }
 
+ .example-small-box, .example-large-box {
+
+  align-items: center;
+  justify-content: center;
+}
+
+
 

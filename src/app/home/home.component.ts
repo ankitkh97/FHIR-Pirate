@@ -1,3 +1,4 @@
+import { DatabaseService } from './../database.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  public statusCheck: boolean;
+  constructor(private service: DatabaseService) { }
 
   ngOnInit() {
+    this.statusCheck = this.service.varStatus;
   }
 
 }

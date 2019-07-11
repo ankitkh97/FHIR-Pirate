@@ -1,34 +1,37 @@
 <app-app-header [isUserLoggedIn]="true"></app-app-header>
 <div class="main-div">
-    <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
-<mat-card class="example-card">
-  <mat-card-header>Medication</mat-card-header>
-  <br><br>
-  <mat-card-content>
-    <mat-list-item role="listitem"><b>{{medication.identifier[0].system}}-{{medication.identifier[0].value}}</b>
-    </mat-list-item>
-    <br>
-    <mat-list-item role="listitem"><b>Order: </b>{{medication.medicationCodeableConcept.text}}</mat-list-item>
-    <br>
-    <mat-list-item role="listitem"><b>Organisation: </b>{{organisation.name}}</mat-list-item>
-    <br>
-    <mat-list-item role="listitem"><b>Organisation Address: </b> <br>
-      {{organisation.address[0].line[0]}}
-      <br>{{organisation.address[0].city}} {{organisation.address[0].state}}
-      <br>{{organisation.address[0].postalCode}}
-    </mat-list-item>
+  <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+    <mat-card class="example-card">
+      <mat-card-header>Medication</mat-card-header>
+      <br><br>
+      <mat-card-content>
+        <mat-list-item role="listitem"><b>{{medication.identifier[0].system}}-{{medication.identifier[0].value}}</b>
+        </mat-list-item>
+        <br>
+        <mat-list-item role="listitem"><b>Order: </b>{{medication.medicationCodeableConcept.text}}</mat-list-item>
+        <br>
+        <mat-list-item role="listitem"><b>Organisation: </b>{{organisation.name}}</mat-list-item>
+        <br>
+        <mat-list-item role="listitem"><b>Organisation Address: </b> <br>
+          {{organisation.address[0].line[0]}}
+          <br>{{organisation.address[0].city}} {{organisation.address[0].state}}
+          <br>{{organisation.address[0].postalCode}}
+        </mat-list-item>
 
 
-  </mat-card-content>
+      </mat-card-content>
 
-</mat-card>
-<mat-card class="example-card">
-    <mat-card-header>Purchase</mat-card-header>
-    <br><br>
-    <mat-card-content>
-      <img src="../../assets/images/b7d6397626303bef3e262d980716a9c44176af011.jpg" alt="Medicine image" height="150" width="150">
-      <mat-list-item role="listitem">Click the link below to purchase<a href='https://dir.indiamart.com/impcat/atorvastatin.html'><br> {{medication.medicationCodeableConcept.text}}</a></mat-list-item>
-    </mat-card-content>
-  </mat-card>
-</div>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>Purchase</mat-card-header>
+      <br><br>
+      <mat-card-content>
+        <img src="../../assets/images/b7d6397626303bef3e262d980716a9c44176af011.jpg" alt="Medicine image" height="150"
+          width="150">
+        <mat-list-item role="listitem">Click the link below to purchase<a
+            href='https://dir.indiamart.com/impcat/atorvastatin.html'><br>
+            {{medication.medicationCodeableConcept.text}}</a></mat-list-item>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

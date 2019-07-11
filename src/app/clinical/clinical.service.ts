@@ -4,14 +4,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ClinicalService {
-private url = 'http://hapi.fhir.org/baseDstu3/ClinicalImpression/1537304/_history/1';
+  private url = 'http://hapi.fhir.org/baseDstu3/ClinicalImpression/1537304/_history/1';
 
-constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-getClinical() {
+  getClinical() {
 
-  return this.http.get(this.url);
+    return this.http.get(this.url);
 
-}
+  }
 
 }

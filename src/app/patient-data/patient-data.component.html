@@ -15,32 +15,74 @@
 <div class="bg">
   <div class="wrapper">
 
-<mat-tab-group dynamicHeight>
-  <mat-tab label="Patient Sign in">
-    <div class="example-large-box mat-elevation-z4">
-      <div class="main" >
-        <p class="sign">Patient Sign in</p>
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="Patient Sign in">
+        <div class="example-large-box mat-elevation-z4">
+          <div class="main">
+            <p class="sign">Patient Sign in</p>
 
-          <form class="form1" (ngSubmit) = "onSubmit($event)">
-
-
-            <div>
-              <input class="un" id="patient_id" type="number" name="patient_id" align="center" placeholder="Patient ID" required/>
-
-            </div>
-            <div>
-              <input class="pass"  type="password" name="pass" align="center" placeholder="Password">
-
-            </div>
+            <form class="form1" (ngSubmit)="onSubmit($event)">
 
 
-            <div class="server">
-              <button type="submit" class="submit" (click) = "patient()">
-                Sign in
-              </button>
-            </div>
+              <div>
+                <input class="un" id="patient_id" type="number" name="patient_id" align="center"
+                  placeholder="Patient ID" required />
 
-            <mat-form-field>
+              </div>
+              <div>
+                <input class="pass" type="password" name="pass" align="center" placeholder="Password">
+
+              </div>
+
+
+              <div class="server">
+                <button type="submit" class="submit" (click)="patient()">
+                  Sign in
+                </button>
+              </div>
+
+              <mat-form-field>
+                  <mat-label>Select a FHIR server</mat-label>
+                  <mat-select (selectionChange)="getValue($event.value)">
+                    <mat-option value="option1">HAPI</mat-option>
+                    <mat-option value="option2">EPIC</mat-option>
+                    <mat-option value="option3">CERNER</mat-option>
+                    <mat-option value="option4">AllScripts</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+
+
+            </form>
+
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Practitioner Sign in">
+        <div class="example-large-box mat-elevation-z4">
+          <div class="main">
+            <p class="sign">Practitioner Sign in</p>
+
+            <form class="form1" (ngSubmit)="onSubmit($event)">
+
+              <div>
+                <input class="un" id="patient_id" type="number" name="patient_id" align="center"
+                  placeholder="Patient ID" required />
+
+              </div>
+              <div>
+                <input class="pass" type="password" name="pass" align="center" placeholder="Password">
+
+              </div>
+
+
+              <div class="server">
+                <button type="submit" class="submit" (click)="practitioner()">
+                  Sign in
+                </button>
+              </div>
+
+              <mat-form-field>
                 <mat-label>Select a FHIR server</mat-label>
                 <mat-select (selectionChange)="getValue($event.value)">
                   <mat-option value="option1">HAPI</mat-option>
@@ -48,63 +90,17 @@
                   <mat-option value="option3">CERNER</mat-option>
                   <mat-option value="option4">AllScripts</mat-option>
                 </mat-select>
-            </mat-form-field>
+              </mat-form-field>
 
 
 
-          </form>
+            </form>
 
-    </div>
-    </div>
-  </mat-tab>
-  <mat-tab label="Practitioner Sign in" >
-    <div class="example-large-box mat-elevation-z4">
-      <div class="main" >
-        <p class="sign">Practitioner Sign in</p>
-
-          <form class="form1" (ngSubmit) = "onSubmit($event)" >
-
-            <div>
-              <input class="un" id="patient_id" type="number" name="patient_id" align="center" placeholder="Patient ID" required/>
-
-            </div>
-            <div>
-              <input class="pass"  type="password" name="pass" align="center" placeholder="Password">
-
-            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
 
 
-            <div class="server">
-              <button type="submit" class="submit" (click) = "practitioner()" >
-                Sign in
-              </button>
-            </div>
-
-            <mat-form-field>
-                <mat-label>Select a FHIR server</mat-label>
-                <mat-select (selectionChange)="getValue($event.value)">
-                  <mat-option value="option1">HAPI</mat-option>
-                  <mat-option value="option2">EPIC</mat-option>
-                  <mat-option value="option3">CERNER</mat-option>
-                  <mat-option value="option4">AllScripts</mat-option>
-                </mat-select>
-            </mat-form-field>
-
-
-
-          </form>
-
-    </div>
-    </div>
-  </mat-tab>
-</mat-tab-group>
-
-
+  </div>
 </div>
-</div>
-
-
-
-
-
-

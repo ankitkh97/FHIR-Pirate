@@ -1,29 +1,45 @@
 <app-app-header [isUserLoggedIn]="true"></app-app-header>
-<div class="layout">
-<div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+<div class="main-div">
+  <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
     <mat-card class="example-card">
-        <mat-card-header>Conditions</mat-card-header>
-        <br><br>
-        <mat-card-content>
-            <mat-list-item role="listitem"><b>Clinical Status: </b>{{conditions.clinicalStatus}}</mat-list-item>
-            <br>
-            <mat-list-item role="listitem"><b>Verification Status: </b>{{conditions.verificationStatus}}</mat-list-item>
-            <br>
-            <mat-list-item role="listitem"><b>Severity: </b>{{conditions.severity.text}}</mat-list-item>
-            <br>
-            <mat-list-item role="listitem"><b>Onset Age: </b>{{conditions.onsetAge.value}}</mat-list-item>
-            <br>
-            <mat-list-item role="listitem"><b>Evidence: </b>{{conditions.evidence[0].code[0].text}}</mat-list-item>
+      <mat-card-header>Conditions</mat-card-header>
+      <br><br>
+      <mat-card-content>
+        <mat-list-item role="listitem"><b>Clinical Status: </b>{{conditions.clinicalStatus}}</mat-list-item>
+        <br>
+        <mat-list-item role="listitem"><b>Verification Status: </b>{{conditions.verificationStatus}}</mat-list-item>
+        <br>
+        <mat-list-item role="listitem"><b>Severity: </b>{{conditions.severity.text}}</mat-list-item>
+        <br>
+        <mat-list-item role="listitem"><b>Onset Age: </b>{{conditions.onsetAge.value}}</mat-list-item>
+        <br>
+        <mat-list-item role="listitem"><b>Evidence: </b>{{conditions.evidence[0].code[0].text}}</mat-list-item>
 
 
-        </mat-card-content>
+      </mat-card-content>
 
     </mat-card>
 
+    <mat-card class="example-card">
+      <mat-card-header>Suggestions</mat-card-header>
+      <br><br>
+      <mat-card-content>
+        <mat-list-item role="listitem">Chest pain can have causes that aren't due to underlying disease.<br> Examples include heavy lifting, weight lifting, trauma to the chest or swallowing a large piece of food.</mat-list-item>
+        <br>
+        <mat-list-item role="listitem">Angina: pain caused by reduced blood flow to the heart</mat-list-item>
+        <br>
+        <mat-list-item role="listitem">Costochondritis: inflammation of the cartilage in the rib cage <br>Chest pain caused by costochondritis can range from mild to severe.</mat-list-item>
+        <br>
+        <mat-list-item role="listitem">Heart Attack: occurs when a blood clot blocks blood flow to the heart. Without blood, tissue loses oxygen and dies.</mat-list-item>
+      </mat-card-content>
+    </mat-card>
 
-<div>
-    <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a></div>
-</div>
+
+    <!-- <div>
+      <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus"
+        title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible
+        popover</a></div> -->
+  </div>
 </div>
 
 
@@ -34,4 +50,3 @@
   $('popover').popover()
 });
 </script> -->
-

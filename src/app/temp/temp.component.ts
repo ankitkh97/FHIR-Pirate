@@ -1,33 +1,87 @@
-import { PolicyService } from '../Policyservice';
-import { Component, OnInit } from '@angular/core';
+import { FormdataService } from './../formdata.service';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { UserFetch } from '../user-fetch';
+import { FormGroup, FormControl } from '@angular/forms';
+
+
+export interface Departments {
+  value: number;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-temp',
   templateUrl: './temp.component.html',
-  styleUrls: ['./temp.component.css']
+  styleUrls: ['./temp.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
+
+
 export class TempComponent implements OnInit {
-  policies: any[] =[];
-  constructor(private policyService: PolicyService) { }
 
-  public deletePolicy(policyId){
-    this.policyService.deletePolicy(policyId).subscribe((ret)=>{
-          console.log("Policy deleted: ", ret);
-    })
-}
+  constructor(private formDataService: FormdataService) { }
 
+  departments: Departments[] = [
+    { value: 1, viewValue: 'Cardiology' },
+    { value: 2, viewValue: 'Ophthalmology' },
+    { value: 3, viewValue: 'Neurology' },
+    { value: 4, viewValue: 'Psychology' },
+    { value: 5, viewValue: 'Dermatology' }
+  ];
+  selectedValue: string;
+  displayData: boolean;
+  userFormGroup: FormGroup;
+  user: UserFetch;
+  users: UserFetch[] = [];
 
-public updatePolicy(policy: {id: number, amount: number, clientId: number, userId: number, description: string}){
-    let newPolicy: {id: number, amount: number, clientId: number, userId: number, description: string} = {id: policy.id, amount: 0,clientId: 0,userId: 0, description:' '};
-    this.policyService.updatePolicy(policy).subscribe((ret)=> {
-          console.log('Policy updated: ', ret);
+  fetchId = 0;
+
+  idtodelete = 0;
+
+  getUsers() {
+    this.formDataService.getUsers().subscribe(data => {
+      this.users = data;
     });
-}
+  }
+  getUser() {
+    // tslint:disable-next-line: whitespace
+    this.formDataService.getUser(this.fetchId).subscribe(data => {
+      this.user = data;
+      this.displayData = true;
+    });
+  }
+
+
+
+  addUser() {
+    this.formDataService.addUser(this.userFormGroup.value).subscribe(data => {
+      this.user = data;
+      console.log(this.user);
+    });
+    this.getUsers();
+  }
+  deleteUser() {
+
+    this.formDataService.deleteUser(this.idtodelete).subscribe(data => {
+      this.getUsers();
+    });
+  }
 
   ngOnInit() {
-    this.policyService.getPolicies().subscribe(( data : any[]) =>{
-      console.log(data);
-      this.policies = data;
-    });
+    this.userFormGroup = new FormGroup(
+      {
+        name: new FormControl(''),
+        phone: new FormControl(''),
+        date: new FormControl(''),
+        time: new FormControl(''),
+        department: new FormControl(''),
+        reason: new FormControl(''),
+        insurance: new FormControl('')
+      },
+    );
+    this.getUser();
+    this.getUsers();
+    this.deleteUser();
   }
 
 }

@@ -1,27 +1,26 @@
-
-
 <div *ngIf="!isUserLoggedIn">
 </div>
 
 
 <div *ngIf="isUserLoggedIn">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="color: white" >
-    <a class="navbar-brand" [routerLink]="['/home']">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="color:whitesmoke">
+    <a class="navbar-brand" [routerLink]="['/home']">FHIR-Pirate</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
 
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="[ '/PatientInfo']" >Patient Info</a>
+          <a class="nav-link" [routerLink]="[ '/PatientInfo']">Patient Info</a>
         </li>
 
-        <li class="nav-item" *ngIf="!statusCheck" >
+        <li class="nav-item" *ngIf="!statusCheck">
           <a class="nav-link" [routerLink]="[ '/AppointmentInfo']">Appointment</a>
         </li>
 
@@ -48,11 +47,11 @@
       <ul class="nav navbar-nav navbar-right">
 
         <li class="nav-item">
-          <button class="btn btn-danger navbar-btn"><a class="nav-link" [routerLink]="[ '']"><span class="glyphicon glyphicon-log-in"></span>Logout</a></button>
+          <button class="btn btn-danger navbar-btn"><a class="nav-link" [routerLink]="[ '']"><span
+                class="glyphicon glyphicon-log-in"></span>Logout</a></button>
         </li>
       </ul>
 
     </div>
   </nav>
 </div>
-

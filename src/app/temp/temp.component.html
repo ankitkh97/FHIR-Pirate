@@ -1,19 +1,115 @@
-<h1>Insurance Policies</h1>
-<table style="width:100%">
-  <tr>
-    <th>Policy Number</th>
-    <th>Amount</th>
-    <th>Description</th>
-    <th>Actions</th>
-  </tr>
-  <tr *ngFor="let policy of policies" >
-    <td>{{ policy.num }}</td>
-    <td>{{ policy.amount }}</td>
-    <td>{{ policy.description }}</td>
+<app-app-header [isUserLoggedIn]="true"></app-app-header>
 
-    <td>
-    <button (click)="deletePolicy(policy.id)">Delete</button>
-    <button (click)="updatePolicy(policy)">Update</button>
-    </td>
-  </tr>
-</table>
+<div class="w3-banner-main">
+  <div class="center-container">
+    <div class="content-top">
+      <h3 class="header-w3ls">Appointment Form</h3>
+
+      <div class="form-w3ls">
+        <form [formGroup]='userFormGroup' (ngSubmit)='addUser()' novalidate>
+          <div class="form-control1">
+
+            <label for="name">Name</label>
+            <input class="form-control" id="name" type="text" formControlName='name' placeholder="Enter Patient Name" />
+
+          </div>
+          <label for="phone">Contact no.</label>
+          <input class="form-control" id="phone" type="text" formControlName='phone' placeholder="Enter Contact No." />
+          <div>
+            <label for="date">Appointment Date</label>
+            <mat-form-field id="date">
+
+
+              <input matInput [matDatepicker]="picker1" placeholder="Choose an appointment date" formControlName="date" style="background-color:white">
+              <mat-datepicker-toggle matSuffix [for]="picker1" style="color:white"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <label for="time">Time</label>
+          <input class="form-control" id="time" type="text" formControlName='time' placeholder="Enter visit time" />
+
+          <div>
+            <label>Department</label>
+            <mat-form-field id="department">
+
+              <select matNativeControl [(ngModel)]="selectedValue" name="department" formControlName="department"
+                placeholder="Select Department" style="background-color:white">
+                <option *ngFor="let d of departments" [value]="d.viewValue">
+                  {{d.viewValue}}
+                </option>
+              </select>
+            </mat-form-field>
+          </div>
+          <label for="reason">Reason for visit</label>
+          <input class="form-control" id="reason" type="text" formControlName='reason' placeholder=" Visit Reason" />
+          <label for="insurance">Insurance</label>
+          <input class="form-control" id="insurance" type="text" formControlName='insurance'
+            placeholder="Do you have any insurance?" />
+
+          <button class='btn btn-info'>Make an appointment</button>
+        </form>
+      </div>
+    </div>
+
+
+    <br><br>
+    <div class="center-container">
+      <div class="content-bottom">
+        <h3 class="header-w3ls">Scheduled Appointments</h3>
+        <table class="table table-striped table-responsive">
+          <tr>
+            <th>Appointment Id</th>
+            <th>Name</th>
+            <th>Contact No.</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Department</th>
+            <th>Reason for Visit</th>
+            <th>Insurance</th>
+
+          </tr>
+          <tr *ngFor="let u of users">
+            <td>
+              {{u.id}}
+            </td>
+            <td>
+              {{u.name}}
+            </td>
+            <td>
+              {{u.phone}}
+            </td>
+            <td>
+              {{u.date}}
+            </td>
+            <td>
+              {{u.time}}
+            </td>
+            <td>
+              {{u.department}}
+            </td>
+            <td>
+              {{u.reason}}
+            </td>
+            <td>
+              {{u.insurance}}
+            </td>
+          </tr>
+        </table>
+
+
+
+
+        <!--
+<input type="number" class="form-control" [(ngModel)] = 'fetchId' placeholder="Enter User ID to fetch" />
+<button class="btn btn-info" (click)= 'getUser()'>Fetch user</button> -->
+        <label for="delete">Enter Appointment Id to delete appointment</label>
+        <input class="form-control" type="number" id="delete" [(ngModel)]='idtodelete'
+          placeholder="Enter Appointment Id to delete" />
+
+        <button class='btn btn-danger' (click)='deleteUser()'>Delete Appointment </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

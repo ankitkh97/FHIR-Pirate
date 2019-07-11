@@ -1,0 +1,121 @@
+.w3-banner-main{
+  background-image: url(../../assets/images/m4.jpg);
+     background-size: contain;
+ }
+ .center-container {
+  padding: 1.35em 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+::ng-deep .mat-input-element{
+  color: white;
+}
+.mat-form-field-type-mat-native-select .mat-input-element{
+  padding: 0;
+}
+
+
+.content-top{
+  width: 50%;
+  margin: 30px auto 30px;
+  background-color: rgba(8, 8, 8, 0.37);
+  padding: 40px 40px;
+}
+
+.content-bottom{
+  width:90%;
+  margin-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+}
+.form-control1 {
+  padding-bottom: 0px;
+}
+
+h3.header-w3ls {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 300;
+  padding-bottom: 35px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 3px;
+
+}
+
+@media (max-width: 991px) {
+  .content-top {
+     width: 76%;
+  }
+  h3.header-w3ls {
+      font-size: 25px;
+}
+}
+
+@media (max-width: 800px) {
+  input#name, input#phone, input#date, input#time, input#department, input#reason, input#insurance,input#delete, select, .tickets input[type="number"] {
+      width: 91%;
+  }
+  h3.header-w3ls {
+      font-size: 40px;
+  }
+  label.rating {
+      font-size: 16px;
+  }
+  label.header {
+      font-size: 17px;
+  }
+  }
+
+  @media (max-width: 768px) {
+    h3.header-w3ls {
+        font-size: 36px;
+    }
+    input#name, input#phone, input#date, input#time, input#department, input#reason, input#insurance, input#delete, select, .tickets input[type="number"] {
+        width: 100%;
+    }
+    .center-container {
+        min-height:886px;
+    }
+    input#name, input#phone, input#date, input#time, input#department, input#reason, input#insurance, input#delete, select, .tickets input[type="number"] {
+        width: 91%;
+    }
+    }
+
+    @media (max-width: 640px) {
+      h3.header-w3ls {
+          font-size: 30px;
+      }
+      input#name, input#phone, input#date, input#time, input#department, input#reason, input#insurance, input#delete, select, .tickets input[type="number"] {
+          width:92%;
+      }
+       select {
+          width: 100%;
+      }
+      }
+
+      input#name, input#phone, input#date, input#time, input#department, input#reason, input#insurance, input#delete ,input#timepicker,textarea {
+        border: none;
+        color: #fff;
+        text-align: justify;
+        outline: none;
+        letter-spacing: 1px;
+        font-size: 15px;
+        font-weight: normal;
+        background-color:rgba(255, 247, 247, 0.09);
+          margin-bottom: 16px;
+        width:20em;
+
+    }
+
+    label {
+      /* Other styling... */
+      text-align: right;
+      clear: both;
+      float:left;
+      margin-right:15px;
+      color: white;
+  }
+.table{
+  color: white;
+}

@@ -20,7 +20,7 @@
 }
 .wrapper{
   text-align: center;
-  padding-top: 150px;
+  padding-top: 50px;
   height: 400px;
 }
 
@@ -105,6 +105,14 @@ font-family: 'Ubuntu', sans-serif;
   align-items: center;
   justify-content: center;
 }
+.mat-tab-labels{
+  justify-content: center; /* align items in Main Axis */
+  font-size: 20px;
+}
 
+.mat-ink-bar {
+  background-color:#ee2925 !important;}
 
-
+.mat-tab-header {
+    border-bottom: none !important;
+}

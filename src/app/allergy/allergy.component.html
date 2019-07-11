@@ -4,24 +4,53 @@
 <p> Reaction {{allergy.reaction[0].manifestation[0].coding[0].dsiplay}}</p>
 <p>{{allergy.reaction[0].manifestation[1].coding[0].display}}</p>
 <p>{{allergy.reaction[0].manifestation[2].coding[0].display}}</p> -->
-<div class="layout">
-<div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
-<mat-card class="example-card">
-    <mat-card-header>Allergy</mat-card-header>
-    <br><br>
-    <mat-card-content>
+
+
+
+
+<div class="main-div">
+  <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+    <mat-card class="example-card">
+      <mat-card-header>Allergy</mat-card-header>
+      <br><br>
+      <mat-card-content>
         <mat-list-item role="listitem"><b>Category: Food</b></mat-list-item>
         <br>
         <mat-list-item role="listitem">Allergy to eggs</mat-list-item>
         <mat-list-item role="listitem">Reaction: Hives,Nausea,Vomitting</mat-list-item>
 
 
-    </mat-card-content>
+      </mat-card-content>
 
-</mat-card>
+    </mat-card>
 
-<div>
+    <!-- <div>
     <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
-</div>
-</div>
+</div> -->
+
+    <mat-card class="example-card">
+      <mat-card-header>Suggestions</mat-card-header>
+      <br><br>
+      <mat-card-content>
+        <mat-list-item role="listitem">Skin inflammation or hives — the most common egg allergy reaction.
+        </mat-list-item>
+        <br>
+        <mat-list-item role="listitem">Nasal congestion, runny nose and sneezing (allergic rhinitis)</mat-list-item>
+        <br>
+        <mat-list-item role="listitem">Digestive symptoms, such as cramps, nausea and vomiting.</mat-list-item>
+        <br>
+        <mat-list-item role="listitem">Asthma signs and symptoms such as coughing, wheezing, chest tightness or shortness of breath</mat-list-item>
+      </mat-card-content>
+    </mat-card>
+
+
+
+
+
+
+    <!-- <div>
+      <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus"
+        title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible
+        popover</a></div> -->
+  </div>
 </div>

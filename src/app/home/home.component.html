@@ -1,42 +1,48 @@
 <app-app-header [isUserLoggedIn]="true"></app-app-header>
-<div class="bg">
-<div class="cards-list">
 
-    <div class="card 1" [routerLink]="['/PatientInfo']" routerLinkActive="router-link-active" >
-      <div class="card_image"> <img src="../../assets/images/kisspng-avatar-computer-icons-patient-clip-art-5ae45bb44c9c89.7071674615249151243138.png" /> </div>
+<div class="bg1">
+  <div class="cards-list">
+
+    <div class="card 1" [routerLink]="['/PatientInfo']" routerLinkActive="router-link-active">
+      <div class="card_image"> <img
+          src="../../assets/images/kisspng-avatar-computer-icons-patient-clip-art-5ae45bb44c9c89.7071674615249151243138.png" />
+      </div>
       <div class="card_title title-white">
         <p>Patient Info</p>
       </div>
     </div>
 
-      <div class="card 2" [routerLink]="['/AppointmentInfo']" routerLinkActive="router-link-active" *ngIf="!statusCheck">
+    <div class="card 2" [routerLink]="['/AppointmentInfo']" routerLinkActive="router-link-active" *ngIf="!statusCheck">
       <div class="card_image">
         <img src="../../assets/images/appointment-512.png" />
-        </div>
+      </div>
       <div class="card_title title-white">
         <p>Book an appointment</p>
       </div>
     </div>
+    <a href="../../assets/Sample filled in MR.pdf" download >
+      <div class="card 3">
 
-    <div class="card 3">
-      <div class="card_image">
-        <img src="../../assets/images/8295837.jpg" />
-      </div>
-      <div class="card_title">
-        <p>View Practitioner Report</p>
-      </div>
-    </div>
-
-    <div class="card 4" [routerLink]="['/Medication']" routerLinkActive="router-link-active" >
         <div class="card_image">
-          <img src="../../assets/images/pills-tamhsc.jpg" />
+          <img src="../../assets/images/8295837.jpg" />
         </div>
         <div class="card_title">
-          <p>Dispensed Medications</p>
+          <p>Download Practitioner Report</p>
         </div>
+
       </div>
+    </a>
 
-
-
+    <div class="card 4" [routerLink]="['/Medication']" routerLinkActive="router-link-active">
+      <div class="card_image">
+        <img src="../../assets/images/pills-tamhsc.jpg" />
+      </div>
+      <div class="card_title">
+        <p>Dispensed Medications</p>
+      </div>
     </div>
+
+
+
+  </div>
 </div>

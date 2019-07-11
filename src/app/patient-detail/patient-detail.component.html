@@ -1,35 +1,36 @@
 <app-app-header [isUserLoggedIn]="true"></app-app-header>
 
-<div class="row">
-    <div class="col-sm-6">
-<mat-card class="example-card">
+
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="15px" class="space">
+
+  <mat-card class="example-card">
     <mat-card-header>
-      <mat-card-title>{{patient.name[0].given[0]}}</mat-card-title>
+      <mat-card-title>{{patient.name[0].given[0]}} {{patient.name[0].given[1]}}</mat-card-title>
       <mat-card-subtitle></mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="../../assets/images/staff-1.jpg" alt="Photo of a patient">
     <mat-card-content>
-
     </mat-card-content>
-</mat-card>
+  </mat-card>
 
 
 
-
-<mat-card class="example-card" >
-
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Patient Details</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
     <mat-list role="list">
-        <mat-list-item role="listitem">Full Name: {{patient.name[0].given[0]}} {{patient.name[0].given[1]}}</mat-list-item>
-        <mat-list-item role="listitem">Patient ID: {{patient.id}}</mat-list-item>
-        <mat-list-item role="listitem">Gender:{{patient.gender}}</mat-list-item>
-        <mat-list-item role="listitem">DOB: {{patient.birthDate}}</mat-list-item>
-        <mat-list-item role="listitem">Contact No.: {{patient.telecom[1].value}}</mat-list-item>
-        <mat-list-item role="listitem">Address: </mat-list-item>
-        <mat-list-item role="listitem">{{patient.address[0].line[0]}},{{patient.address[0].city}}, {{patient.address[0].state}}, {{patient.address[0].postalCode}}</mat-list-item>
-        <mat-list-item role="listitem">{{patient.address[0].country}}</mat-list-item>
-
-      </mat-list>
-
-</mat-card>
-</div>
+      <mat-list-item role="listitem"><b><i>Full Name:</i></b> {{patient.name[0].given[0]}} {{patient.name[0].given[1]}}
+      </mat-list-item>
+      <mat-list-item role="listitem"><b><i>Patient ID: </i></b>   {{patient.id}}</mat-list-item>
+      <mat-list-item role="listitem"><b><i>Gender: </i></b>  {{patient.gender}}</mat-list-item>
+      <mat-list-item role="listitem"><b><i>DOB: </i> </b> {{patient.birthDate}}</mat-list-item>
+      <mat-list-item role="listitem"><b><i>Contact No.: </i></b> {{patient.telecom[1].value}}</mat-list-item>
+      <mat-list-item role="listitem"><b><i>Address: </i></b></mat-list-item>
+      <mat-list-item role="listitem">{{patient.address[0].line[0]}},{{patient.address[0].city}},
+        {{patient.address[0].state}}, {{patient.address[0].postalCode}}</mat-list-item>
+      <mat-list-item role="listitem">{{patient.address[0].country}}</mat-list-item>
+    </mat-list>
+  </mat-card>
 </div>

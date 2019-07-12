@@ -21,27 +21,39 @@
           <div class="main">
             <p class="sign">Patient Sign in</p>
 
-            <form class="form1" (ngSubmit)="onSubmit($event)">
+            <form class="form1" (ngSubmit)="onSubmit($event)" [formGroup]="patientForm">
 
 
-              <div>
-                <input class="un" id="patient_id" type="number" name="patient_id" align="center"
-                  placeholder="Patient ID" required />
+              <div class="form-group">
+                <input class="un" id="patient_id" type="number" name="patient_id"
+                  [ngClass]="{'is-invlalid': submitted && f.id.errors}" placeholder="Patient ID" formControlName="id"
+                  required />
+                <div *ngIf="submitted && f.id.errors">
+                  <div *ngIf="f.id.errors.required" style="color: red">
+                    <i>Patient ID is required</i>
+                  </div>
 
+                </div>
               </div>
               <div>
-                <input class="pass" type="password" name="pass" align="center" placeholder="Password">
+                <input class="pass" type="password" name="pass" placeholder="Password">
 
               </div>
               <div>
                 <mat-form-field>
                   <mat-label>Select a FHIR server</mat-label>
-                  <mat-select (selectionChange)="getValue($event.value)">
+                  <mat-select (selectionChange)="getValue($event.value)" [disabled]="disableSelect.value"
+                    formControlName="selection" required [ngClass]="{'is-invlalid': submitted && f.selection.errors}">
                     <mat-option value="option1">HAPI</mat-option>
                     <mat-option value="option2">EPIC</mat-option>
-                    <mat-option value="option3">CERNER (not connected yet)</mat-option>
-                    <mat-option value="option4">AllScripts (not connected yet)</mat-option>
+                    <mat-option value="option3" disabled>CERNER (not connected yet)</mat-option>
+                    <mat-option value="option4" disabled>AllScripts (not connected yet)</mat-option>
                   </mat-select>
+                  <div *ngIf="submitted && f.selection.errors">
+                    <div *ngIf="f.selection.errors.required" >
+                      Please choose a FHIR server
+                    </div>
+                  </div>
                 </mat-form-field>
               </div>
 
@@ -50,13 +62,7 @@
                   Sign in
                 </button>
               </div>
-
-
-
-
-
             </form>
-
           </div>
         </div>
       </mat-tab>
@@ -65,26 +71,39 @@
           <div class="main">
             <p class="sign">Practitioner Sign in</p>
 
-            <form class="form1" (ngSubmit)="onSubmit($event)">
+            <form class="form1" (ngSubmit)="onSubmit($event)" [formGroup]="patientForm">
 
-              <div>
-                <input class="un" id="patient_id" type="number" name="patient_id" align="center"
-                  placeholder="Patient ID" required />
+              <div class="form-group">
+                <input class="un" id="patient_id" type="number" name="patient_id"
+                  [ngClass]="{'is-invlalid': submitted && f.id.errors}" placeholder="Patient ID" formControlName="id"
+                  required />
+                <div *ngIf="submitted && f.id.errors">
+                  <div *ngIf="f.id.errors.required" style="color: red">
+                    <i>Patient ID is required</i>
+                  </div>
+
+                </div>
 
               </div>
               <div>
-                <input class="pass" type="password" name="pass" align="center" placeholder="Password">
+                <input class="pass" type="password" name="pass" placeholder="Password">
 
               </div>
               <div>
                 <mat-form-field>
                   <mat-label>Select a FHIR server</mat-label>
-                  <mat-select (selectionChange)="getValue($event.value)">
+                  <mat-select (selectionChange)="getValue($event.value)" [disabled]="disableSelect.value"
+                    formControlName="selection" required [ngClass]="{'is-invlalid': submitted && f.selection.errors}">
                     <mat-option value="option1">HAPI</mat-option>
                     <mat-option value="option2">EPIC</mat-option>
-                    <mat-option value="option3">CERNER (not connected yet)</mat-option>
-                    <mat-option value="option4">AllScripts (not connected yet)</mat-option>
+                    <mat-option value="option3" disabled>CERNER (not connected yet)</mat-option>
+                    <mat-option value="option4" disabled>AllScripts (not connected yet)</mat-option>
                   </mat-select>
+                  <div *ngIf="submitted && f.selection.errors" >
+                    <div *ngIf="f.selection.errors.required">
+                      Please choose a FHIR server
+                    </div>
+                  </div>
                 </mat-form-field>
               </div>
 

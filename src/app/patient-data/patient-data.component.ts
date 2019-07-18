@@ -23,7 +23,7 @@ export class PatientDataComponent implements OnInit {
   EHRcontrol = new FormControl('', [Validators.required]);
   patientForm: FormGroup;
   submitted = false;
-  constructor(public myService: DatabaseService, private router: Router, private formBuilder:FormBuilder) { }
+  constructor(public myService: DatabaseService, private router: Router, private formBuilder: FormBuilder) { }
 
 
   practitioner() {
@@ -47,10 +47,9 @@ export class PatientDataComponent implements OnInit {
   onSubmit(event) {
     this.submitted = true;
 
-        // stop here if form is invalid
     if (this.patientForm.invalid) {
-            return;
-        }
+      return;
+    }
     this.id = event.target.patient_id.value;
     this.myService.varStatus = this.myVar;
     this.myService.myMethod(this.id, this.var1);
@@ -59,21 +58,18 @@ export class PatientDataComponent implements OnInit {
 
 
 
-  // public onLoginClick() {
-  //   this.router.navigate(['./home']);
-  // }
 
 
   ngOnInit() {
     this.patientForm = this.formBuilder.group({
       'id': [null, [Validators.required]],
-      'selection':[null,[Validators.required]]
+      'selection': [null, [Validators.required]]
     });
-   }
+  }
 
-   get f() {
-     return this.patientForm.controls;
-   }
+  get f() {
+    return this.patientForm.controls;
+  }
 
 
 }

@@ -5,6 +5,8 @@
       <mat-card-header>Conditions</mat-card-header>
       <br><br>
       <mat-card-content>
+        <mat-list-item role="listitem"><b>Evidence: </b>{{conditions.evidence[0].code[0].text}}</mat-list-item>
+        <br>
         <mat-list-item role="listitem"><b>Clinical Status: </b>{{conditions.clinicalStatus}}</mat-list-item>
         <br>
         <mat-list-item role="listitem"><b>Verification Status: </b>{{conditions.verificationStatus}}</mat-list-item>
@@ -12,10 +14,6 @@
         <mat-list-item role="listitem"><b>Severity: </b>{{conditions.severity.text}}</mat-list-item>
         <br>
         <mat-list-item role="listitem"><b>Onset Age: </b>{{conditions.onsetAge.value}}</mat-list-item>
-        <br>
-        <mat-list-item role="listitem"><b>Evidence: </b>{{conditions.evidence[0].code[0].text}}</mat-list-item>
-
-
       </mat-card-content>
 
     </mat-card>
@@ -24,13 +22,17 @@
       <mat-card-header>Suggestions</mat-card-header>
       <br><br>
       <mat-card-content>
-        <mat-list-item role="listitem">Chest pain can have causes that aren't due to underlying disease.<br> Examples include heavy lifting, weight lifting, trauma to the chest or swallowing a large piece of food.</mat-list-item>
+        <mat-list-item role="listitem">Chest pain can have causes that aren't due to underlying disease.<br> Examples
+          include heavy lifting, weight lifting, trauma to the chest or swallowing a large piece of food.
+        </mat-list-item>
         <br>
         <mat-list-item role="listitem">Angina: pain caused by reduced blood flow to the heart</mat-list-item>
         <br>
-        <mat-list-item role="listitem">Costochondritis: inflammation of the cartilage in the rib cage <br>Chest pain caused by costochondritis can range from mild to severe.</mat-list-item>
+        <mat-list-item role="listitem">Costochondritis: inflammation of the cartilage in the rib cage <br>Chest pain
+          caused by costochondritis can range from mild to severe.</mat-list-item>
         <br>
-        <mat-list-item role="listitem">Heart Attack: occurs when a blood clot blocks blood flow to the heart. Without blood, tissue loses oxygen and dies.</mat-list-item>
+        <mat-list-item role="listitem">Heart Attack: occurs when a blood clot blocks blood flow to the heart. Without
+          blood, tissue loses oxygen and dies.</mat-list-item>
       </mat-card-content>
     </mat-card>
 
